@@ -19,7 +19,8 @@ describe('Project Structure & Static Assets Validation', () => {
       'src/pages/services/videography-photography.astro',
       'src/pages/services/web-development.astro',
       'src/pages/services/seo-optimization.astro',
-      'src/pages/services/content-marketing.astro'
+      'src/pages/services/content-marketing.astro',
+      'src/pages/terms.astro'
     ];
 
     it.each(requiredPages)('page %s should exist in repository', (relPath) => {
@@ -90,6 +91,66 @@ describe('Project Structure & Static Assets Validation', () => {
       expect(content).toContain('form-unavailable-card');
       expect(content).toContain('unavailable-badge');
       expect(content).toContain('mailto:Info@brandelier.in');
+    });
+  });
+
+  describe('Agent Readiness & Machine Discovery Validation', () => {
+    it('public/robots.txt should declare Content-Signal directive', () => {
+      const robotsPath = path.join(rootDir, 'public/robots.txt');
+      const content = fs.readFileSync(robotsPath, 'utf-8');
+      expect(content).toContain('Content-Signal: search=yes, ai-train=no');
+    });
+
+    it('public/llms.txt and public/llms-full.txt should exist and describe Brandelier', () => {
+      const llmsPath = path.join(rootDir, 'public/llms.txt');
+      const llmsFullPath = path.join(rootDir, 'public/llms-full.txt');
+      expect(fs.existsSync(llmsPath)).toBe(true);
+      expect(fs.existsSync(llmsFullPath)).toBe(true);
+
+      const content = fs.readFileSync(llmsPath, 'utf-8');
+      expect(content).toContain('# Brandelier Media Works');
+      expect(content).toContain('/terms');
+    });
+
+    it('public/index.md and public/.htaccess should provide markdown representation & negotiation', () => {
+      const mdPath = path.join(rootDir, 'public/index.md');
+      const htaccessPath = path.join(rootDir, 'public/.htaccess');
+      expect(fs.existsSync(mdPath)).toBe(true);
+      expect(fs.existsSync(htaccessPath)).toBe(true);
+
+      const htaccessContent = fs.readFileSync(htaccessPath, 'utf-8');
+      expect(htaccessContent).toContain('text/markdown');
+      expect(htaccessContent).toContain('Vary');
+    });
+
+    it('public/.well-known/mcp/server-card.json should exist and conform to SEP-1649', () => {
+      const cardPath = path.join(rootDir, 'public/.well-known/mcp/server-card.json');
+      expect(fs.existsSync(cardPath)).toBe(true);
+
+      const card = JSON.parse(fs.readFileSync(cardPath, 'utf-8'));
+      expect(card.name).toBe('brandelier-media-works');
+      expect(card.version).toBe('1.0.0');
+      expect(card.capabilities).toBeDefined();
+      expect(card.capabilities.tools).toBeDefined();
+    });
+
+    it('src/layouts/Layout.astro should include complete Organization schema, sameAs links, and WebMCP tools', () => {
+      const layoutPath = path.join(rootDir, 'src/layouts/Layout.astro');
+      const content = fs.readFileSync(layoutPath, 'utf-8');
+
+      expect(content).toContain('+91 70586 70837');
+      expect(content).toContain('PostalAddress');
+      expect(content).toContain('sameAs');
+      expect(content).toContain('https://www.instagram.com/brandelier.in/');
+      expect(content).toContain('registerTool');
+      expect(content).toContain('modelContext');
+    });
+
+    it('src/components/Footer.astro should link to Terms of Service', () => {
+      const footerPath = path.join(rootDir, 'src/components/Footer.astro');
+      const content = fs.readFileSync(footerPath, 'utf-8');
+
+      expect(content).toContain('/terms');
     });
   });
 });

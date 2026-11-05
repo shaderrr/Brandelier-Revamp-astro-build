@@ -8,7 +8,7 @@ export default defineConfig({
   site: 'https://brandelier.in',
   integrations: [sitemap()],
   build: {
-    inlineStylesheets: 'always'
+    inlineStylesheets: 'never'
   },
   image: {
     remotePatterns: [

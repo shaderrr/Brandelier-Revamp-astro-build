@@ -19,6 +19,11 @@ interface Props {
 }
 
 const { post, allPosts } = Astro.props;
+
+// Ensure no nested h1 tags exist inside WordPress content so each page has strictly one h1
+const sanitizedPostContent = (post.content || '')
+  .replace(/<h1(\b[^>]*)>/gi, '<h2>')
+  .replace(/<\/h1>/gi, '</h2>');
 ---
 
 <Layout
@@ -85,7 +90,7 @@ const { post, allPosts } = Astro.props;
       <!-- Main Content Area -->
       <article class="article-body">
         <!-- Render sanitized WordPress HTML content -->
-        <div class="prose-content" set:html={post.content} />
+        <div class="prose-content" set:html={sanitizedPostContent} />
 
         <!-- Article Footer / Tags -->
         {

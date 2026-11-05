@@ -1,0 +1,72 @@
+# Brandelier Media Works — Complete AI Documentation
+
+> Creative digital agency and performance marketing company based in Pune, India. We specialize in performance marketing, SEO, social media growth, web development, brand strategy, content marketing, and commercial video/photography production.
+
+---
+
+## 1. Company Overview
+
+- Organization: Brandelier MediaWorks LLP (Brandelier Media Works)
+- Founded: 2024 (6+ years experience)
+- Location: Pune, Maharashtra, India
+- Address: Sr No. 92, Sunset Avenue, Office No – 104, 1st Floor, Pancard Club Rd, Pune, Maharashtra 411069
+- Phone: +91 70586 70837
+- Email: Info@brandelier.in
+- Website: https://brandelier.in
+- Tagline: "Inspiring change, one brand at a time."
+- Positioning: "We create the brand." / "Make noise. Mean more."
+- Metrics: 100+ happy clients, 20+ team members, 500+ projects delivered.
+
+---
+
+## 2. Core Services Breakdown
+
+### 2.1 Performance Marketing & Social Media
+- Focus: Paid media campaigns (Meta, Google, LinkedIn), audience targeting, conversion rate optimization, and social media growth.
+- URL: https://brandelier.in/services/social-media-marketing
+
+### 2.2 Search Engine Optimization (SEO)
+- Focus: Technical audits, on-page optimization, content strategy, link profile building, and localized search dominance in Pune and pan-India.
+- URL: https://brandelier.in/services/seo-optimization
+
+### 2.3 Web Design & Custom Web Development
+- Focus: Modern responsive websites, performant digital experiences, conversion-first UX/UI, Astro, WordPress headless, and bespoke web platforms.
+- URL: https://brandelier.in/services/web-development
+
+### 2.4 Brand Design & Visual Strategy
+- Focus: Complete brand identity systems, logos, typography, visual hierarchy, color theory, and comprehensive brand books.
+- URL: https://brandelier.in/services/brand-design
+
+### 2.5 Content Marketing & Editorial
+- Focus: Thought leadership articles, copywriting, narrative storytelling, content funnels, and customer retention systems.
+- URL: https://brandelier.in/services/content-marketing
+
+### 2.6 Videography & Photography Production
+- Focus: Commercial studio sets, brand documentary films, short-form reels, high-end product photography, and post-production editing.
+- URL: https://brandelier.in/services/videography-photography
+
+---
+
+## 3. Our Four-Step Approach
+
+1. Discovery & Strategy: Research-driven strategies tailored to your target audience and competitive landscape.
+2. Design & Development: Beautiful, functional, user-first creative and digital executions.
+3. Marketing & Promotion: Multi-channel distribution to build organic reach and convert traffic.
+4. Monitoring & Optimization: Continuous data-led refinement to scale ROI and compound growth.
+
+---
+
+## 4. Key Links & Endpoints
+
+- Homepage: https://brandelier.in/
+- About Us: https://brandelier.in/about-us
+- Services Directory: https://brandelier.in/services
+- Portfolio: https://brandelier.in/portfolio
+- Blog & Insights: https://brandelier.in/blog
+- Careers: https://brandelier.in/careers
+- Contact & Inquiries: https://brandelier.in/contact-us
+- Terms of Service: https://brandelier.in/terms
+- Privacy Policy: https://brandelier.in/privacy
+- Machine Discovery (MCP Server Card): https://brandelier.in/.well-known/mcp/server-card.json
+- Robots Directive: https://brandelier.in/robots.txt
+- Sitemap: https://brandelier.in/sitemap-index.xml

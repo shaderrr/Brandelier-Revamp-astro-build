@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+
+const lastUpdated = "November 2026";
+---
+
+<Layout
+  title="Terms of Service | Brandelier Media Works"
+  description="Read the terms and conditions governing the use of Brandelier Media Works services and website."
+  canonical="https://brandelier.in/terms"
+>
+  <PageHero
+    title="Terms of"
+    highlight="service."
+    description={`Last updated: ${lastUpdated}. Please review our terms and service conditions.`}
+    breadcrumb={[{ label: "Terms", href: "/terms" }]}
+  />
+
+  <section class="legal-content-section">
+    <div class="legal-container">
+      <h2>1. Introduction & Acceptance</h2>
+      <p>
+        Welcome to Brandelier Media Works ("Brandelier", "we", "us", or "our"), operated by Brandelier MediaWorks LLP, Pune, Maharashtra, India. By accessing or using our website (<a href="https://brandelier.in">brandelier.in</a>) and our marketing, creative, web development, SEO, or production services, you agree to comply with and be bound by these Terms of Service.
+      </p>
+
+      <h2>2. Services Provided</h2>
+      <p>
+        Brandelier provides digital marketing services including, but not limited to, search engine optimization (SEO), social media marketing, content marketing, brand strategy and design, web design and development, and commercial photo and video production. Detailed scopes of work, milestones, and deliverables are specified in respective client agreements or statements of work (SOW).
+      </p>
+
+      <h2>3. Intellectual Property Rights</h2>
+      <p>
+        All content, designs, code, graphics, logos, and materials created by Brandelier Media Works on this website are protected by applicable intellectual property and copyright laws. Client-commissioned work product is transferred upon full settlement of all contractual invoices as set forth in the individual client agreement.
+      </p>
+
+      <h2>4. User & Client Obligations</h2>
+      <p>
+        Users and clients agree to provide accurate information when inquiring about or using our services. You shall not misuse our website, transmit harmful code, or engage in activities that disrupt or impair our infrastructure or security.
+      </p>
+
+      <h2>5. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, Brandelier Media Works shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use of our website or services.
+      </p>
+
+      <h2>6. Governing Law & Jurisdiction</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of India. Any legal disputes arising out of these terms shall be subject to the exclusive jurisdiction of the competent courts in Pune, Maharashtra, India.
+      </p>
+
+      <h2>7. Contact Information</h2>
+      <p>
+        For questions or legal inquiries regarding these Terms of Service, please contact us:
+      </p>
+      <div class="legal-contact-card">
+        <p><strong>Brandelier MediaWorks LLP</strong></p>
+        <p>Sr No. 92, Sunset Avenue, Office No – 104, 1st Floor, Pancard Club Rd, Pune, Maharashtra 411069, India</p>
+        <p>Email: <a href="mailto:Info@brandelier.in">Info@brandelier.in</a></p>
+        <p>Phone: <a href="tel:+917058670837">+91 70586 70837</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-content-section {
+    padding: 6rem 10vw 8rem;
+    background: var(--paper, #f4f7ff);
+    color: var(--ink, #00003e);
+  }
+  .legal-container {
+    max-width: 840px;
+    margin: 0 auto;
+    font-family: var(--font-body, 'Open Sans', sans-serif);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  .legal-container h2 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 3rem 0 1rem;
+    color: var(--ink, #00003e);
+  }
+  .legal-container h2:first-of-type {
+    margin-top: 0;
+  }
+  .legal-container p {
+    margin: 0 0 1.5rem;
+    color: rgba(0, 0, 62, 0.85);
+  }
+  .legal-container a {
+    color: var(--purple, #9b2fca);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .legal-container a:hover {
+    color: var(--pink, #dd2eb8);
+  }
+  .legal-contact-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 62, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 62, 0.04);
+  }
+  .legal-contact-card p {
+    margin: 0.4rem 0;
+  }
+</style>
+

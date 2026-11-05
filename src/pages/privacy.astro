@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+
+const lastUpdated = "November 2026";
+---
+
+<Layout
+  title="Privacy Policy | Brandelier Media Works"
+  description="Learn how Brandelier Media Works collects, uses, and safeguards your personal data and privacy."
+  canonical="https://brandelier.in/privacy"
+>
+  <PageHero
+    title="Privacy"
+    highlight="policy."
+    description={`Last updated: ${lastUpdated}. Your privacy and data transparency are paramount to us.`}
+    breadcrumb={[{ label: "Privacy", href: "/privacy" }]}
+  />
+
+  <section class="legal-content-section">
+    <div class="legal-container">
+      <h2>1. Overview</h2>
+      <p>
+        Brandelier Media Works ("we", "us", "our") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, store, and process information when you visit <a href="https://brandelier.in">brandelier.in</a> or interact with our services.
+      </p>
+
+      <h2>2. Information We Collect</h2>
+      <p>
+        We may collect information you voluntarily provide, such as your name, email address, phone number, company name, and project specifications when you submit our contact forms or reach out via email or phone.
+      </p>
+
+      <h2>3. How We Use Information</h2>
+      <p>
+        We use your information exclusively to respond to inquiries, provide customized proposals, manage client projects, improve website performance, and comply with legal requirements. We do not sell or rent your personal information to third parties.
+      </p>
+
+      <h2>4. Analytics & Cookies</h2>
+      <p>
+        We may use minimal aggregated web analytics cookies to monitor website performance and improve user experience. You can adjust your browser settings to decline cookies if preferred.
+      </p>
+
+      <h2>5. Security & Retention</h2>
+      <p>
+        We implement industry-standard organizational and technical security measures to safeguard your personal data from unauthorized access or alteration. We retain data only as long as necessary to fulfill the purposes outlined in this policy.
+      </p>
+
+      <h2>6. Contact Us</h2>
+      <p>
+        For inquiries regarding your data or this policy:
+      </p>
+      <div class="legal-contact-card">
+        <p><strong>Brandelier MediaWorks LLP</strong></p>
+        <p>Sr No. 92, Sunset Avenue, Office No – 104, 1st Floor, Pancard Club Rd, Pune, Maharashtra 411069, India</p>
+        <p>Email: <a href="mailto:Info@brandelier.in">Info@brandelier.in</a></p>
+        <p>Phone: <a href="tel:+917058670837">+91 70586 70837</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-content-section {
+    padding: 6rem 10vw 8rem;
+    background: var(--paper, #f4f7ff);
+    color: var(--ink, #00003e);
+  }
+  .legal-container {
+    max-width: 840px;
+    margin: 0 auto;
+    font-family: var(--font-body, 'Open Sans', sans-serif);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  .legal-container h2 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 3rem 0 1rem;
+    color: var(--ink, #00003e);
+  }
+  .legal-container h2:first-of-type {
+    margin-top: 0;
+  }
+  .legal-container p {
+    margin: 0 0 1.5rem;
+    color: rgba(0, 0, 62, 0.85);
+  }
+  .legal-container a {
+    color: var(--purple, #9b2fca);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .legal-container a:hover {
+    color: var(--pink, #dd2eb8);
+  }
+  .legal-contact-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 62, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 62, 0.04);
+  }
+  .legal-contact-card p {
+    margin: 0.4rem 0;
+  }
+</style>
+

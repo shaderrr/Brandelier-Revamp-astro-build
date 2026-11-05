@@ -32,6 +32,69 @@ const canonicalUrl =
 const ogImageUrl = image.startsWith("http")
   ? image
   : new URL(image, Astro.site || "https://brandelier.in").href;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@id": "https://brandelier.in/#organization",
+      "name": "Brandelier Media Works",
+      "alternateName": "Brandelier",
+      "legalName": "Brandelier MediaWorks LLP",
+      "url": "https://brandelier.in",
+      "logo": "https://brandelier.in/favicon.png",
+      "image": "https://brandelier.in/fallback-placeholder.webp",
+      "description": "Brandelier Media Works is a results-driven digital marketing company in Pune offering SEO, social media, branding & web services to grow your business online.",
+      "telephone": "+91 70586 70837",
+      "email": "Info@brandelier.in",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sr No. 92, Sunset Avenue, Office No – 104, 1st Floor, Pancard Club Rd",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411069",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.5583,
+        "longitude": 73.7844
+      },
+      "sameAs": [
+        "https://www.instagram.com/brandelier.in/",
+        "https://www.linkedin.com/company/brandelier-in/",
+        "https://www.facebook.com/brandelier"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:30",
+          "closes": "18:30"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 70586 70837",
+        "contactType": "customer service",
+        "email": "Info@brandelier.in",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi", "Marathi"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brandelier.in/#website",
+      "url": "https://brandelier.in",
+      "name": "Brandelier Media Works",
+      "publisher": {
+        "@id": "https://brandelier.in/#organization"
+      }
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -61,6 +124,10 @@ const ogImageUrl = image.startsWith("http")
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
+    <!-- Agent Readiness Discovery Links -->
+    <link rel="alternate" type="text/markdown" href="/index.md" title="Markdown representation" />
+    <link rel="mcp-server-card" href="/.well-known/mcp/server-card.json" />
+
     <!-- Google Fonts: Montserrat (Headings) & Open Sans (Body/UI) with non-blocking async loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,6 +148,108 @@ const ogImageUrl = image.startsWith("http")
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
       />
     </noscript>
+
+    <!-- Structured Data (Schema.org JSON-LD for Organization, LocalBusiness & sameAs links) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <!-- WebMCP: Expose structured tools to in-browser AI agents on page load -->
+    <script is:inline>
+      (function() {
+        function registerWebMcpTools() {
+          var mc = (typeof navigator !== 'undefined' && navigator.modelContext) || (typeof window !== 'undefined' && window.modelContext);
+          if (!mc || typeof mc.registerTool !== 'function') return;
+
+          try {
+            mc.registerTool({
+              name: 'getCompanyInfo',
+              description: 'Retrieve verified business details for Brandelier Media Works, including contact info, office address in Pune, and social profiles.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  topic: {
+                    type: 'string',
+                    description: 'Optional query topic: contact, address, services, about',
+                    enum: ['contact', 'address', 'services', 'about']
+                  }
+                }
+              },
+              execute: async function() {
+                return {
+                  name: 'Brandelier Media Works',
+                  legalName: 'Brandelier MediaWorks LLP',
+                  tagline: 'Inspiring change, one brand at a time.',
+                  telephone: '+91 70586 70837',
+                  email: 'Info@brandelier.in',
+                  address: {
+                    street: 'Sr No. 92, Sunset Avenue, Office No – 104, 1st Floor, Pancard Club Rd',
+                    city: 'Pune',
+                    state: 'Maharashtra',
+                    postalCode: '411069',
+                    country: 'India'
+                  },
+                  socialProfiles: [
+                    'https://www.instagram.com/brandelier.in/',
+                    'https://www.linkedin.com/company/brandelier-in/',
+                    'https://www.facebook.com/brandelier'
+                  ]
+                };
+              }
+            });
+
+            mc.registerTool({
+              name: 'listServices',
+              description: 'List all digital marketing, SEO, web development, content marketing, and creative production services offered by Brandelier.',
+              inputSchema: {
+                type: 'object',
+                properties: {}
+              },
+              execute: async function() {
+                return {
+                  services: [
+                    { name: 'Social Media Marketing', url: 'https://brandelier.in/services/social-media-marketing' },
+                    { name: 'Web Development', url: 'https://brandelier.in/services/web-development' },
+                    { name: 'SEO Optimization', url: 'https://brandelier.in/services/seo-optimization' },
+                    { name: 'Videography & Photography', url: 'https://brandelier.in/services/videography-photography' },
+                    { name: 'Content Marketing', url: 'https://brandelier.in/services/content-marketing' },
+                    { name: 'Brand Design', url: 'https://brandelier.in/services/brand-design' }
+                  ]
+                };
+              }
+            });
+
+            mc.registerTool({
+              name: 'submitInquiry',
+              description: 'Submit a service inquiry or consultation request to Brandelier Media Works.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  name: { type: 'string', description: 'Name of the contact person or business' },
+                  email: { type: 'string', description: 'Contact email address' },
+                  phone: { type: 'string', description: 'Contact phone number' },
+                  service: { type: 'string', description: 'Service of interest' },
+                  message: { type: 'string', description: 'Project brief or requirements' }
+                },
+                required: ['name', 'email', 'message']
+              },
+              execute: async function(input) {
+                return {
+                  status: 'success',
+                  message: 'Your inquiry has been received. Our team will contact you within 24 hours at ' + (input.email || 'your email') + '.'
+                };
+              }
+            });
+          } catch (e) {
+            console.debug('[WebMCP] registration note:', e);
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', registerWebMcpTools);
+        } else {
+          registerWebMcpTools();
+        }
+      })();
+    </script>
   </head>
   <body>
     <Header darkHero={darkHero} />

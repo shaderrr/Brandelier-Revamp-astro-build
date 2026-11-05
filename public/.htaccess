@@ -1,0 +1,34 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1. Content negotiation: If client accepts text/markdown on the homepage, serve index.md
+RewriteCond %{HTTP:Accept} text/markdown [NC]
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^$ /index.md [L]
+
+# 2. Content negotiation: If client accepts text/markdown and a matching .md file exists
+RewriteCond %{HTTP:Accept} text/markdown [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1.md -f
+RewriteRule ^(.*)/?$ /$1.md [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+# Add Content-Signal header across all responses
+Header always set Content-Signal "search=yes, ai-train=no"
+
+# Add Content-Type and Vary header for markdown and text resources
+<FilesMatch "\.(md|txt)$">
+    Header always set Vary "Accept"
+</FilesMatch>
+
+<FilesMatch "\.md$">
+    Header always set Content-Type "text/markdown; charset=utf-8"
+</FilesMatch>
+
+# Link MCP server card and markdown representation
+<FilesMatch "^(index\.html)?$">
+    Header append Link '</.well-known/mcp/server-card.json>; rel="mcp-server-card"'
+    Header append Link '</index.md>; rel="alternate"; type="text/markdown"'
+</FilesMatch>
+</IfModule>
+

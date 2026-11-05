@@ -1,0 +1,45 @@
+# Brandelier Media Works
+
+> Creative digital agency and performance marketing company based in Pune, India. We specialize in performance marketing, SEO, social media growth, web development, brand strategy, content marketing, and commercial video/photography production.
+
+Brandelier Media Works (Brandelier MediaWorks LLP) empowers ambitious businesses to scale with data-driven performance marketing, high-impact storytelling, and custom web experiences. With 6+ years of experience, 100+ clients, and 500+ projects delivered, we build brands that cannot be ignored.
+
+## Core Pages
+
+- [Homepage](https://brandelier.in/): Overview of Brandelier, our creative philosophy, clients, and core services.
+- [About Us](https://brandelier.in/about-us): Our story, team of 20+ creative professionals, mission, culture, and studio philosophy.
+- [Services](https://brandelier.in/services): Full suite of digital marketing, branding, development, and production services.
+- [Portfolio](https://brandelier.in/portfolio): Case studies, client projects, and creative campaigns across industries.
+- [Blog](https://brandelier.in/blog): Actionable insights on SEO, branding trends, social media posting strategies, and digital marketing.
+- [Careers](https://brandelier.in/careers): Open positions, life at Brandelier, and opportunities to join our creative collective.
+- [Contact Us](https://brandelier.in/contact-us): Get in touch, inquiry form, Pune office address, email, and direct phone.
+- [Terms of Service](https://brandelier.in/terms): Terms and conditions governing the use of Brandelier services and website.
+- [Privacy Policy](https://brandelier.in/privacy): Information collection, usage policies, and client data protection.
+
+## Services Offered
+
+- [Social Media Marketing](https://brandelier.in/services/social-media-marketing): Social media strategy, content creation, community management, and paid social campaigns.
+- [Performance Marketing & SEO](https://brandelier.in/services/seo-optimization): Search engine optimization, technical audits, on-page optimization, and organic ranking growth.
+- [Web Development](https://brandelier.in/services/web-development): Modern, fast, responsive web design and custom digital experiences.
+- [Brand Design](https://brandelier.in/services/brand-design): Visual identity, brand strategy, design systems, and brand positioning.
+- [Content Marketing](https://brandelier.in/services/content-marketing): Strategic copywriting, blog production, thought leadership, and storytelling.
+- [Videography & Photography](https://brandelier.in/services/videography-photography): Commercial production, studio shoots, brand films, and promotional video content.
+
+## Company Details & Contact Information
+
+- Legal Name: Brandelier MediaWorks LLP
+- Brand Name: Brandelier Media Works
+- Email: Info@brandelier.in
+- Phone: +91 70586 70837
+- Office Address: Sr No. 92, Sunset Avenue, Office No – 104, 1st Floor, Pancard Club Rd, Pune, Maharashtra 411069, India
+- Hours: Monday - Saturday, 09:30 - 18:30 IST
+- Social Profiles:
+  - Instagram: https://www.instagram.com/brandelier.in/
+  - LinkedIn: https://www.linkedin.com/company/brandelier-in/
+  - Facebook: https://www.facebook.com/brandelier
+
+## Optional
+
+- [Full Site Content](https://brandelier.in/llms-full.txt): Comprehensive plain-text documentation and complete service catalog.
+- [MCP Server Card](https://brandelier.in/.well-known/mcp/server-card.json): Machine-readable Model Context Protocol server capabilities.
+

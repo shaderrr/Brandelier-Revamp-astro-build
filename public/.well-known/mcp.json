@@ -1,0 +1,111 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "brandelier-media-works",
+  "version": "1.0.0",
+  "description": "Official MCP server for Brandelier Media Works, providing tools and resources for digital marketing services, SEO inquiries, case studies, and business information in Pune, India.",
+  "url": "https://brandelier.in/api/mcp",
+  "endpoint": "https://brandelier.in/api/mcp",
+  "homepage": "https://brandelier.in",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://brandelier.in/api/mcp",
+      "supportedProtocolVersions": [
+        "2024-11-05",
+        "2025-06-18"
+      ]
+    }
+  ],
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "get_services",
+      "description": "List all digital marketing, SEO, web development, content marketing, and branding services offered by Brandelier Media Works.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "serviceCategory": {
+            "type": "string",
+            "description": "Optional category filter (e.g. 'seo', 'social-media', 'web-development', 'branding')",
+            "enum": [
+              "seo",
+              "social-media",
+              "web-development",
+              "branding",
+              "content-marketing",
+              "videography-photography"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "get_company_info",
+      "description": "Retrieve verified company details, office location in Pune, direct phone number, email, and social profiles for Brandelier Media Works.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "submit_inquiry",
+      "description": "Submit a client inquiry, consultation request, or project proposal to Brandelier Media Works.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Client full name or company name"
+          },
+          "email": {
+            "type": "string",
+            "description": "Client email address"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Client phone number"
+          },
+          "service": {
+            "type": "string",
+            "description": "Required service"
+          },
+          "message": {
+            "type": "string",
+            "description": "Project details or requirements"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "message"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "https://brandelier.in/llms.txt",
+      "name": "Site Summary (llms.txt)",
+      "description": "Standard llms.txt site summary and page directory",
+      "mimeType": "text/plain"
+    },
+    {
+      "uri": "https://brandelier.in/llms-full.txt",
+      "name": "Full AI Documentation",
+      "description": "Complete service breakdown and agency documentation",
+      "mimeType": "text/plain"
+    }
+  ]
+}
+
